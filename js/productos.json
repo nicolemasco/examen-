@@ -1,0 +1,124 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Silla Moderna Luna",
+      "categoria": "silla",
+      "estilo": "moderno",
+      "presupuesto": "medio",
+      "precio": 120,
+      "descripcion": "Silla de diseño curvo con patas color beige.",
+      "imagen": "imagenes/productos/silla1.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "Mesa Industrial Forge",
+      "categoria": "mesa",
+      "estilo": "industrial",
+      "presupuesto": "alto",
+      "precio": 420,
+      "descripcion": "Mesa robusta con madera oscura y acero negro.",
+      "imagen": "imagenes/productos/mesa1.png"
+    },
+    {
+      "id": 3,
+      "nombre": "Sofá Minimalista Soft",
+      "categoria": "sofa",
+      "estilo": "minimalista",
+      "presupuesto": "alto",
+      "precio": 750,
+      "descripcion": "Sofá amplio color blanco y cojines.",
+      "imagen": "imagenes/productos/sofa1.jpg"
+    },
+    {
+      "id": 4,
+      "nombre": "Cama Rústica Roble",
+      "categoria": "cama",
+      "estilo": "rústico",
+      "presupuesto": "medio",
+      "precio": 680,
+      "descripcion": "Cama de madera robusta con acabado natural.",
+      "imagen": "imagenes/productos/cama1.jpg"
+    },
+    {
+      "id": 5,
+      "nombre": "Cuadro Decorativo Aurora",
+      "categoria": "decoracion",
+      "estilo": "moderno",
+      "presupuesto": "bajo",
+      "precio": 35,
+      "descripcion": "Cuadro abstracto en tonos cálidos.",
+      "imagen": "imagenes/productos/cuadro1.jpg"
+    },
+    {
+      "id": 6,
+      "nombre": "Silla Industrial Metalix",
+      "categoria": "silla",
+      "estilo": "industrial",
+      "presupuesto": "bajo",
+      "precio": 89,
+      "descripcion": "Estructura metálica con acabado negro.",
+      "imagen": "imagenes/productos/silla2.jpg"
+    },
+    {
+      "id": 7,
+      "nombre": "Mesa Clásica Vintage",
+      "categoria": "mesa",
+      "estilo": "clásico",
+      "presupuesto": "medio",
+      "precio": 250,
+      "descripcion": "Mesa redonda con detalles tallados.",
+      "imagen": "imagenes/productos/mesa2.jpg"
+    },
+    {
+      "id": 8,
+      "nombre": "Sofá Urbano Grey",
+      "categoria": "sofa",
+      "estilo": "moderno",
+      "presupuesto": "medio",
+      "precio": 540,
+      "descripcion": "Sofá gris de tres plazas para sala moderna.",
+      "imagen": "imagenes/productos/sofa2.jpg"
+    },
+    {
+      "id": 9,
+      "nombre": "Cama Minimal Zen",
+      "categoria": "cama",
+      "estilo": "minimalista",
+      "presupuesto": "alto",
+      "precio": 900,
+      "descripcion": "Diseño limpio con plataforma baja.",
+      "imagen": "imagenes/productos/cama2.jpg"
+    },
+    {
+      "id": 10,
+      "nombre": "Florero Cerámico Terra",
+      "categoria": "decoracion",
+      "estilo": "rústico",
+      "presupuesto": "bajo",
+      "precio": 22,
+      "descripcion": "Florero rústico de cerámica.",
+      "imagen": "imagenes/productos/florero1.jpg"
+    },
+    {
+      "id": 11,
+      "nombre": "Espejo Modern Curve",
+      "categoria": "decoracion",
+      "estilo": "moderno",
+      "presupuesto": "medio",
+      "precio": 115,
+      "descripcion": "Espejo redondo con borde metálico dorado.",
+      "imagen": "imagenes/productos/espejo1.jpg"
+    },
+    {
+      "id": 12,
+      "nombre": "Mesa Minimal Blanco",
+      "categoria": "mesa",
+      "estilo": "minimalista",
+      "presupuesto": "bajo",
+      "precio": 140,
+      "descripcion": "Mesa blanca con madera clara.",
+      "imagen": "imagenes/productos/mesa3.jpg"
+    }
+  ]
+}

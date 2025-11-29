@@ -1,0 +1,70 @@
+/* --- Caja general del tabulador --- */
+.tab {
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 25px;
+    background: #f7f3ec; 
+    border: 2px solid #e0d6c8;
+    justify-content: center;
+    margin: 30px auto;
+    margin-top: -30px;
+    width: fit-content;
+}
+
+
+.tab button {
+    font-family: "Manrope", sans-serif;
+    background-color: #e7c8aba1; 
+    color: #3a342b;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 12px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: all 0.4s ease;
+}
+
+
+.tab button:hover {
+    background-color: #ffedd9c4; 
+    color: #3a342b;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+
+.tab button.active {
+    background-color: #6d675e;
+    color: #fff;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.20);
+}
+
+
+.tabcontent {
+    display: none;
+    padding: 20px;
+    margin: 0px 150px;
+    margin-top: 10px;
+    border-radius: 25px;
+    border: 2px solid #e0d6c8;
+    background-color: #fff;
+    color: #3a342b;
+    font-family: "Manrope", sans-serif;
+    animation: fadeIn 1.2s ease;
+}
+
+
+.tabcontent p {
+    text-align: left;
+    font-size: 22px;
+    color: #6d675e;
+    margin: 0;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}

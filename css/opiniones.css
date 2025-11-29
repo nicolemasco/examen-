@@ -1,0 +1,97 @@
+/* Contenedor de testimoniales y encuesta */
+.testimonials_container {
+    margin-top: 50px;
+}
+
+.testimonials .item {
+    background-color: rgb(38, 27, 20); 
+    border-radius: 40px;               
+    padding: 30px;
+    text-align: center;
+    margin: 10px;
+    color: #fff;
+}
+
+.testimonials .item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.testimonials .item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #e7c8aba1; 
+}
+
+.testimonials .item p {
+    font-size: 20px;
+    color: #ffe0c3; 
+}
+
+/* Contador numérico */
+.ftco-counter .number {
+    font-size: 50px;
+    font-weight: 600;
+    color: #3a342b; 
+}
+
+.ftco-counter h5 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #6d675e;
+}
+
+/* Combo simple y encuesta*/
+.configform1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    color: #ffe0c3;
+    font-weight: 600;
+}
+
+.cuadro-blanco {
+    background-color: rgb(187, 143, 106);
+    padding: 30px;
+    border-radius: 40px;
+    text-align: center;
+}
+
+form label {
+    font-size: 24px;
+    margin: 10px 20px;
+    color: #ffe0c3;
+}
+
+input, select, textarea {
+    font-size: 25px;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    background-color: #fff;
+    color: #3a342b;
+    border: none;
+    box-sizing: border-box;
+}
+
+.botones {
+    background: #e7c8aba1;
+    color: #ffffff;
+    border-radius: 30px;
+    padding: 12px 36px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.50s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.botones:hover {
+    background: #ffedd9c4;
+    color: #3a342b;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.06);
+}

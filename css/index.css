@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+body {
+  overflow-x: hidden;
+  font-family: "Manrope", sans-serif;
+  background-color: #fffbf4;
+}
+
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.formatos1 {
+  font-size: 50px;
+  color: #3a342b;
+  font-weight: 300;
+}
+
+
+.bannerweb {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imagenes/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+}
+
+
+.centrado {
+  text-align: center;
+
+
+}
+
+
+.bajar1 {
+  padding-top: 300px;
+}
+
+.bajar2 {
+  padding-top: 50px;
+}
+
+.bajar3 {
+  padding-top: 30px;
+}
+
+.bajar4 {
+  padding-top: 20%;
+}
+
+h1 {
+  color: #fff;
+  font-size: 70px;
+  font-weight: 600;
+}
+
+h2 {
+  color: #fff;
+  font-size: 50px;
+  font-weight: 100;
+}
+
+h3 {
+  color: #6d675e;
+  font-size: 40px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.color1 {
+  color: #fff;
+}
+
+p {
+  font-size: 25px;
+  margin: 40px 100px;
+  text-align: center;
+}
+
+
+.botones {
+  padding: 12px 36px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  background: #e7c8aba1;
+  border-radius: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.50s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.botones:hover {
+  background: #ffedd9c4;
+  color: #3a342b;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+
+
+/*formulario*/
+
+.configform1 {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  /* Centra verticalmente */
+  color: #ffe0c3;
+  font-weight: 600;
+
+}
+
+.cuadro-blanco {
+  background-color: rgb(38, 27, 20);
+  padding: 30px;
+  border-radius: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+
+/* Título */
+.configform1 h3 {
+  color: #ffffff;
+  padding: 8px;
+}
+
+.error {
+  border-color: red;
+}
+
+label {
+  font-size: 24px;
+  margin: 10px 20px 10px 20px;
+
+}
+
+
+.swal2-popup {
+  background-color: #e0e0e0;
+  border-radius: 40px;
+  color: #282828;
+}
+
+
+
+.swal2-title {
+  padding-top: 40px;
+  font-weight: 800;
+}
+
+
+.swal2-confirm {
+  background-color: #ff544b;
+  color: #fff;
+  border-radius: 25px;
+  font-family: "Manrope", sans-serif;
+
+}
+
+/*controles input*/
+input {
+  display: grid;
+  margin-top: 20px;
+}
+
+.form-control {
+  font-size: 25px;
+  border-radius: 30px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+
+}
+
+
+/* --- INICIO --- */
+
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  /* blanco translúcido */
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  /* primero logo, luego nav */
+  align-items: center;
+  padding: 10px 0;
+}
+
+.top-bar img {
+  width: 150px;
+  margin: 15px 0;
+}
+
+.top-bar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 120px;
+  padding: 15px 0;
+   text-decoration: none !important;
+  color: #6d675e 
+}
+
+
+nav li {
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+nav li:hover {
+  color: #160e06;
+}
+
+
+/* Evitar letra azul y línea subrayada solo para los enlaces del menú */
+.top-bar nav ul li a {
+    color: #6d675e;       /* color original de tu menú */
+    text-decoration: none; /* quita la línea azul */
+    font-weight: 600;
+    transition: color 0.4s ease;
+}
+
+.top-bar nav ul li a:hover {
+    color: #160e06;       /* tu efecto hover actual */
+}
+
+/* --- banner inicio --- */
+
+#banner {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 0 20px;
+}
+
+/* Banner de INICIO */
+.banner-inicio {
+    background-image:
+        linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+        url("/imagenes/inicio.jpg");
+}
+
+/* Banner de NOSOTROS */
+.banner-nosotros {
+    background-image:
+        linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+        url("/imagenes/nosotros.jpg");
+}
+
+/* Banner de SERVICIOS */
+.banner-servicios {
+    background-image:
+        linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+        url("/imagenes/servicios.jpg");
+}
+
+.banner-opiniones {
+    background-image:
+        linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+        url("/imagenes/opiniones.jpg");
+}
+
+
+
+#servicios,
+#inspiracion,
+#quienesomos {
+  padding: 40px 20px;
+}
+
+#banner p{
+  font-weight: 700;
+}
+
+
+#servicios {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto; 
+}
+
+
+
+#servicios ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 25px 40px; 
+  justify-items: center; 
+  align-items: center; 
+  padding: 0;
+}
+
+#servicios li {
+  background-color:#948c81;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 25px;
+  padding: 20px;
+  width: 92%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  
+}
+
+#servicios li:hover {
+  transform: translateY(-5px);
+}
+
+
+/* --- galeria --- */
+.galeria {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.galeria img {
+  width: 390px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  background-color: #6d675e;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+

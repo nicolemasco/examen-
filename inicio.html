@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Examen</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/idioma.css">
+
+</head>
+
+<body>
+
+  <body>
+    <div class="top-bar">
+      <img src="/imagenes/logo.png" alt="Logo">
+
+      <nav>
+        <ul>
+          <li><a data-translate="optionMenu1" href="inicio.html">Inicio</a></li>
+          <li><a data-translate="optionMenu2" href="nosotros.html">Nosotros</a></li>
+          <li><a data-translate="optionMenu3" href="servicios.html">Servicios</a></li>
+          <li><a data-translate="optionMenu4" href="productos.html">Productos</a></li>
+          <li><a data-translate="optionMenu5" href="opiniones.html">Opiniones</a></li>
+          <li><a data-translate="optionMenu6" href="easydeco.html">EasyDeco</a></li>
+          <li><a data-translate="optionMenu7" href="galeria.html">Galeria</a></li>
+          <li><a data-translate="optionMenu8" href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="language-container">
+        <span class="language-text">Es</span>
+        <label class="language-switch" for="languageSwitch">
+          <input type="checkbox" id="languageSwitch" onclick="changeLanguage()">
+          <span class="slider round"></span>
+        </label>
+        <span class="language-text">En</span>
+      </div>
+    </div>
+
+    <main>
+      <section id="banner" class="banner-inicio">
+        <h1 data-translate="tittle">Diseñá espacios que inspiran</h1>
+        <p data-translate="subtittle">Transformá tu hogar con estilo, comodidad y armonía.</p>
+      </section>
+    </main>
+  </body>
+
+  <section id="servicios">
+    <h3 data-translate="tittle2">Nuestros Servicios</h3>
+    <p data-translate="subtittle2">Simplificamos todo el proceso de diseño.</p>
+    <ul>
+      <li data-translate="tittle3">Diseño interior por habitación</li>
+      <li data-translate="sub1">Asesoría personalizada</li>
+      <li data-translate="sub2">Recomendaciones de materiales y estilos</li>
+      <li data-translate="sub3">Presupuesto en tiempo real</li>
+    </ul>
+  </section>
+
+  <section id="inspiracion">
+    <h3 data-translate="tittle4">Inspírate</h3>
+    <p data-translate="sub4">Algunas ideas creadas por nuestros usuarios:</p>
+    <div class="galeria">
+      <img src="/imagenes/sala.jpg" alt="Sala moderna">
+      <img src="/imagenes/habitacion.jpg" alt="Habitación boho">
+      <img src="/imagenes/cocina.jpg" alt="Cocina minimalista">
+    </div>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/idioma.js"></script>
+
+  </main>
+
+  <footer>
+    <p data-translate="footerr">© 2025 MAORA | Diseño de Interiores</p>
+  </footer>
+
+</body>
+
+</html>
