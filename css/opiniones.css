@@ -1,97 +1,205 @@
-/* Contenedor de testimoniales y encuesta */
-.testimonials_container {
-    margin-top: 50px;
-}
+/* ===============================
+   ESTÉTICA GLOBAL DEL CONTENIDO
+   =============================== */
 
-.testimonials .item {
-    background-color: rgb(38, 27, 20); 
-    border-radius: 40px;               
-    padding: 30px;
-    text-align: center;
-    margin: 10px;
-    color: #fff;
-}
 
-.testimonials .item img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 15px;
-}
 
-.testimonials .item h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #e7c8aba1; 
-}
-
-.testimonials .item p {
-    font-size: 20px;
-    color: #ffe0c3; 
-}
-
-/* Contador numérico */
-.ftco-counter .number {
-    font-size: 50px;
+.banner-opiniones h1 {
+    font-size: 70px;
     font-weight: 600;
-    color: #3a342b; 
+    color: #ffffff;
 }
 
-.ftco-counter h5 {
-    font-size: 24px;
-    font-weight: 500;
-    color: #6d675e;
+.banner-opiniones p {
+    font-size: 26px;
+    color: #f9f2ea;
+    margin-top: 15px;
+    font-weight: 300;
 }
 
-/* Combo simple y encuesta*/
-.configform1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh;
-    color: #ffe0c3;
-    font-weight: 600;
-}
+
+/* ===============================
+   TARJETAS GENERALES (cuadro-blanco)
+   =============================== */
 
 .cuadro-blanco {
-    background-color: rgb(187, 143, 106);
-    padding: 30px;
-    border-radius: 40px;
+    background-color: rgb(234, 223, 217); /* mismo que index */
+    padding: 45px;
+    border-radius: 38px;
+    max-width: 650px;
+    margin: auto;
     text-align: center;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.08);
 }
 
-form label {
-    font-size: 24px;
-    margin: 10px 20px;
-    color: #ffe0c3;
+.cuadro-blanco h3 {
+    font-size: 32px;
+    color: #000000a1;
+    margin-bottom: 25px;
+    font-weight: 700;
 }
 
-input, select, textarea {
-    font-size: 25px;
-    border-radius: 30px;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-    background-color: #fff;
-    color: #3a342b;
+/* Inputs y selects */
+.cuadro-blanco .form-control {
+    width: 100%;
+    max-width: 500px;
+    margin: 10px auto 20px;
+    padding: 14px 18px;
+    border-radius: 28px;
     border: none;
-    box-sizing: border-box;
+    font-size: 20px;
+    background: #ffffff;
+    color: #2b2e3a;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
+.cuadro-blanco textarea.form-control {
+    resize: none;
+}
+
+.cuadro-blanco label {
+    display: block;
+    font-size: 22px;
+    color: #000000;
+    margin-top: 15px;
+}
+
+
+/* BOTÓN MAORA */
 .botones {
-    background: #e7c8aba1;
+    background: #74533e; 
     color: #ffffff;
     border-radius: 30px;
-    padding: 12px 36px;
+    padding: 14px 40px;
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.50s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    margin-top: 15px;
+    transition: all 0.40s ease;
 }
 
 .botones:hover {
     background: #ffedd9c4;
     color: #3a342b;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.06);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+
+/* ===========================
+   CONTADOR NUMÉRICO
+   =========================== */
+
+#section-counter {
+    padding: 80px 0;
+}
+
+#section-counter .titulos {
+    font-size: 42px;
+    color: #3a342b;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+/* Contenedor en una sola fila */
+.counter-row {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* Caja cuadrada */
+.counter-box {
+    width: 250px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    text-align: center;
+    padding: 20px;
+}
+
+.counter-box:hover {
+    transform: translateY(-6px);
+}
+
+.counter-box .number {
+    font-size: 48px;
+    color: #3a342b;
+    font-weight: 600;
+}
+
+.counter-box h5 {
+    color: #6d675e;
+    font-size: 20px;
+    margin-top: 8px;
+}
+
+
+/* ===============================
+   TESTIMONIALES
+   =============================== */
+
+#testimoniales .titulos {
+    color: #3a342b;
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.testimonials .item {
+    background-color: rgb(255, 255, 255);
+    border-radius: 38px;
+    padding: 35px 25px;
+    text-align: center;
+    color: #000000;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.testimonials .item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.testimonials .item img {
+    width: 110px;
+    height: 110px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-bottom: 18px;
+}
+
+.testimonials .item h3 {
+    font-size: 24px;
+    color: #000000a1;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.testimonials .item p {
+    font-size: 18px;
+    color: #000000;
+}
+
+
+/* Navegación del carrusel */
+.owl-nav button {
+    background: none !important;
+    border: none !important;
+}
+
+.owl-nav span {
+    font-size: 35px;
+    color: #3a342b;
+}
+
+.owl-nav span:hover {
+    color: #6d675e;
 }

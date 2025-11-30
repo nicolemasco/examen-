@@ -1,7 +1,6 @@
 .filtros {
   text-align: center;
-  /* deja espacio para el header fijo */
-  margin-top: 180px; /* ajusta según el alto real de tu .top-bar (prueba 140-220px) */
+  margin-top: 180px; 
   padding: 40px 0 20px;
 }
 
@@ -34,10 +33,9 @@
 }
 
 .form-filtros button {
-    background-color: #74533e;
+    background-color: #74533e; /*color*/
 }
 
-/* estilo «flecha» consistente en selects */
 .form-filtros select {
   appearance: none;
   -webkit-appearance: none;
@@ -63,11 +61,10 @@
 }
 
 .botones:hover {
-  background: #d2c3b5;
+  background: #d2c3b5; /*hover boton colorr*/
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 
-/* Grid de productos */
 .grid-productos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -75,7 +72,6 @@
   padding: 30px 50px;
 }
 
-/* Card de producto */
 .card-producto {
   background: white;
   border-radius: 20px;
@@ -85,11 +81,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 320px; /* casi cuadrado */
+  height: 320px;
   justify-content: space-between;
 }
 
-/* Imagen del producto */
 .card-producto img {
   width: 90%;
   max-height: 150px; 
@@ -97,24 +92,21 @@
   border-radius: 15px;
 }
 
-/* Nombre del producto */
 .card-producto h3 {
   font-size: 25px;
   margin: 5px 0;
   text-align: center;
 }
 
-/* Descripción */
 .card-producto p {
   font-size: 18px;
   line-height: 1.3em;
   margin: 5px 0;
   text-align: center;
   overflow: hidden;
-  height: 40px; /* altura fija para mantener uniforme */
+  height: 40px; 
 }
 
-/* Precio */
 .card-producto .precio {
   font-size: 20px;
   font-weight: bold;
