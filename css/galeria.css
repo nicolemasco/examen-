@@ -1,0 +1,65 @@
+
+.galeria {
+    font-family: "Manrope", sans-serif;
+    color: #3a342b;
+}
+
+.galeria .galeriaFotos {
+    display: none;
+}
+
+.galeria .galeriaFotos .img-fluid {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.galeria .galeriaFotos .img-fluid:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 36px rgba(0,0,0,0.12);
+}
+
+.galeria .galeriaFotos h3 {
+    color: #6d675e;
+    margin-top: 10px;
+}
+
+#menuOpciones {
+    border-radius: 14px;
+    margin-top: -30px;
+    padding: 12px 18px;
+    border: 1px solid rgba(0,0,0,0.08);
+    background: #fff;
+    color: #3a342b;
+}
+
+
+.galeria .container { max-width: 1200px; }
+
+
+#baguetteBox-overlay {
+    background-color: rgba(10,8,6,0.92); 
+}
+.baguetteBox-button#close-button,
+.baguetteBox-button#next-button,
+.baguetteBox-button#previous-button {
+    background-color: #6d675e !important;
+    color: #fff !important;
+}
+
+h1 {
+    font-size: 5rem !important; 
+}
+
+#quienesomos h3 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+
+}
+
+#quienesomos p {
+    font-size: 1.7rem;
+}

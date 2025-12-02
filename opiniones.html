@@ -7,13 +7,14 @@
     <title>Opiniones</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/opiniones.css">
+    <link rel="icon" href="favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 </head>
 
 <body>
 
-    <!-- HEADER -->
     <div class="top-bar">
         <img src="/imagenes/logo.png" alt="Logo">
         <nav>
@@ -35,67 +36,37 @@
         <p>Tu feedback nos ayuda a mejorar y a ofrecer lo mejor para tu espacio.</p>
     </section>
 
-    <section id="combo-simple" class="bajar3">
-        <h3>Tu opinión nos inspira</h3>
-            <p>Compartí tu experiencia y ayudanos a seguir transformando espacios con propósito.</p>
-        <div class="cuadro-blanco">
-            <h3>Elige tu servicio</h3>
-            <form id="formCombo">
-                <label for="servicio">Servicio:</label>
-                <select id="servicio" class="form-control">
-                    <option value="">Seleccione un servicio</option>
-                    <option value="interior">Diseño interior</option>
-                    <option value="exterior">Diseño exterior</option>
-                    <option value="asesoria">Asesoría personalizada</option>
-                </select>
-                <button type="submit" class="botones">Enviar</button>
-            </form>
-        </div>
-    </section>
-
-    <section id="encuesta" class="bajar3">
-        <div class="cuadro-blanco">
-            <h3>Cuéntanos tu experiencia</h3>
-            <form id="formEncuesta">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" class="form-control" required>
-                <label for="comentario">Comentario:</label>
-                <textarea id="comentario" class="form-control" rows="4" required></textarea>
-                <button type="submit" class="botones">Enviar Encuesta</button>
-            </form>
-        </div>
-    </section>
 
     <section class="ftco-counter" id="section-counter">
-    <div class="container">
-        <h3>Nuestra trayectoria, en números</h3>
+        <div class="container">
+            <h3>Nuestra trayectoria, en números</h3>
             <p>Un vistazo a los resultados que respaldan nuestro compromiso con la calidad.</p>
 
-        <div class="counter-row">
+            <div class="counter-row">
 
-            <div class="counter-box">
-                <strong class="number" data-number="10">0</strong>
-                <h5>Años de Experiencia</h5>
+                <div class="counter-box">
+                    <strong class="number" data-number="10">0</strong>
+                    <h5>Años de Experiencia</h5>
+                </div>
+
+                <div class="counter-box">
+                    <strong class="number" data-number="1000">0</strong>
+                    <h5>Proyectos Completados</h5>
+                </div>
+
+                <div class="counter-box">
+                    <strong class="number" data-number="950">0</strong>
+                    <h5>Clientes Satisfechos</h5>
+                </div>
+
+                <div class="counter-box">
+                    <strong class="number" data-number="24">0</strong>
+                    <h5>Proyectos en Curso</h5>
+                </div>
+
             </div>
-
-            <div class="counter-box">
-                <strong class="number" data-number="1000">0</strong>
-                <h5>Proyectos Completados</h5>
-            </div>
-
-            <div class="counter-box">
-                <strong class="number" data-number="900">0</strong>
-                <h5>Clientes Satisfechos</h5>
-            </div>
-
-            <div class="counter-box">
-                <strong class="number" data-number="24">0</strong>
-                <h5>Proyectos en Curso</h5>
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
 
     <section id="testimoniales" class="bajar3">
@@ -119,13 +90,72 @@
         </div>
     </section>
 
+    <section class="encuesta-container">
+        <h3>Tu opinión sobre nuestro servicio</h3>
+        <p class="lead">Califica tu experiencia. Tus respuestas generan una puntuación total.</p>
+
+        <form id="encuesta" onsubmit="return false;">
+
+            <div class="campo">
+                <label for="charla">Tipo de servicio ofrecido:</label>
+                <select id="charla" required>
+                    <option value="">Selecciona un servicio</option>
+                    <option value="Diseño de interiores">Diseño de interiores</option>
+                    <option value="Decoración de eventos">Decoración de eventos</option>
+                    <option value="Asesoría de materiales">Asesoría de materiales</option>
+                    <option value="Renovación de espacios">Renovación de espacios</option>
+                </select>
+            </div>
+
+            <fieldset class="pregunta">
+                <legend>Calidad del diseño realizado</legend>
+                <div class="radios">
+                    <label><input type="radio" name="p1" value="1"> Malo</label>
+                    <label><input type="radio" name="p1" value="2"> Regular</label>
+                    <label><input type="radio" name="p1" value="3"> Bueno</label>
+                    <label><input type="radio" name="p1" value="4"> Muy bueno</label>
+                    <label><input type="radio" name="p1" value="5"> Excelente</label>
+                </div>
+            </fieldset>
+
+            <fieldset class="pregunta">
+                <legend>Comunicación durante el proceso</legend>
+                <div class="radios">
+                    <label><input type="radio" name="p2" value="1"> Malo</label>
+                    <label><input type="radio" name="p2" value="2"> Regular</label>
+                    <label><input type="radio" name="p2" value="3"> Bueno</label>
+                    <label><input type="radio" name="p2" value="4"> Muy bueno</label>
+                    <label><input type="radio" name="p2" value="5"> Excelente</label>
+                </div>
+            </fieldset>
+
+            <fieldset class="pregunta">
+                <legend>Tiempo y entrega del servicio</legend>
+                <div class="radios">
+                    <label><input type="radio" name="p3" value="1"> Malo</label>
+                    <label><input type="radio" name="p3" value="2"> Regular</label>
+                    <label><input type="radio" name="p3" value="3"> Bueno</label>
+                    <label><input type="radio" name="p3" value="4"> Muy bueno</label>
+                    <label><input type="radio" name="p3" value="5"> Excelente</label>
+                </div>
+            </fieldset>
+
+            <div class="acciones">
+                <button id="btnLimpiar" type="button">Limpiar</button>
+                <button id="btnCalcular" type="button">Enviar opinión</button>
+            </div>
+
+        </form>
+    </section>
+
     <footer>
         <p>© 2025 MAORA | Diseño de Interiores</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <!-- CARGAS JS LIBRERIAS CONTADOR NUMERICO -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 
     <script src="js/jquery-migrate-3.0.1.min.js "></script>
     <script src="js/jquery.waypoints.min.js "></script>
@@ -152,9 +182,9 @@
             }
         });
 
-        $('#section-counter').waypoint(function(direction) {
+        $('#section-counter').waypoint(function (direction) {
             if (direction === 'down' && !$(this.element).hasClass('ftco-animated')) {
-                $('.number').each(function() {
+                $('.number').each(function () {
                     var $this = $(this), num = $this.data('number');
                     $this.animateNumber({ number: num }, 7000);
                 });
@@ -163,4 +193,5 @@
     </script>
 
 </body>
+
 </html>

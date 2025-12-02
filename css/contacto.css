@@ -1,0 +1,156 @@
+#form1 {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.formRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.colForm {
+    flex: 1;
+    min-width: 260px;
+}
+
+.inputBox {
+    position: relative;
+    width: 100%;
+}
+
+.inputBox input,
+.inputBox textarea {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    color: #444;
+    border: none;
+    border-bottom: 2px solid #cfcfcf;
+    outline: none;
+    background: transparent;
+}
+
+.inputBox textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+.inputBox .text {
+    position: absolute;
+    left: 0;
+    padding: 10px 0;
+    pointer-events: none;
+    font-size: 21px;
+    color: #7e6642;
+    transition: 0.3s;
+}
+
+.inputBox input:focus ~ .text,
+.inputBox input:valid ~ .text,
+.inputBox textarea:focus ~ .text,
+.inputBox textarea:valid ~ .text {
+    color: #1b0d03; 
+}
+
+
+.inputBox input:focus ~ .line,
+.inputBox textarea:focus ~ .line {
+    width: 100%;
+}
+
+#mensajeAlert,
+#mensajeAlert2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+    
+}
+
+.alertaRoja {
+    color: #b90505;
+}
+
+.alertaVerde {
+    color: #0d8b3c;
+}
+
+
+#quienesomos {
+    margin-bottom: -30px;
+}
+
+.mensajeRow{
+    margin-top: 75px;
+}
+
+
+.inputBox.textarea .text {
+    top: -35px; 
+}
+
+
+
+.seccionInscripcion {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.seccionInscripcion h3 {
+    margin-bottom: 10px;
+}
+
+.seccionInscripcion p {
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.seccionInscripcion .email {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    outline: none;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.seccionInscripcion .email:focus {
+    border-color: #3f1f02;
+    box-shadow: 0 0 8px rgba(133, 71, 13, 0.3);
+}
+
+#btnSend, #btnSend2 {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+    background: #85470da1;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block; 
+}
+
+#btnSend:hover {
+    background: #d2c3b5;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12),
+                0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+#btnSend2:hover {
+    background: #d2c3b5;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12),
+                0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.seccionInscripcion form, .colForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

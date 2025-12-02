@@ -30,7 +30,7 @@ const translations = {
         optionMenu4: "Products",
         optionMenu5: "Reviews",
         optionMenu6: "EasyDeco",
-        optionMenu7: "Galery",
+        optionMenu7: "Gallery",
         optionMenu8: "Contact",
         tittle: "Design spaces that inspire",
         subtittle: "Transform your home with style, comfort, and harmony.",

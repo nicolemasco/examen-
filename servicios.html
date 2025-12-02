@@ -7,6 +7,7 @@
     <title>Servicios</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/servicios.css">
+    <link rel="icon" href="favicon.png">
 </head>
 
 <body>
@@ -32,7 +33,10 @@
         <p>Descubrí todo lo que podemos hacer por tu hogar o proyecto.</p>
     </section>
 
+    <h3 id="nuestros">Explora Nuestros Servicios</h3>
+    <p>Escribe palabras clave y navega entre las opciones disponibles de manera rápida y sencilla.</p>
     <section class="buscador-servicios">
+
         <input type="text" id="searchInput" placeholder="Escribe aquí para buscar un servicio">
         <button id="btnBuscar" class="botones">Buscar</button>
     </section>
@@ -41,7 +45,28 @@
 
     <section id="listaServicios" class="grid-servicios"></section>
 
+    <h3>Destacados de la Semana</h3>
+    <p>Navega entre las imágenes para obtener una perspectiva más dinámica de nuestro contenido.</p>
+    <section class="carrusel-servicios" aria-label="Galería de proyectos">
+        <div class="carrusel-contenedor">
+            <img src="" id="serv-thumb" alt="Proyecto destacado" class="carrusel-thumb">
+            <h2 id="titulo-carrusel" class="carrusel-titulo">Galería de Proyectos</h2>
+            <p class="carrusel-desc">
+                Estas imágenes muestran algunos de nuestros proyectos más representativos: ambientes que combinan
+                estética y funcionalidad.
+            </p>
+
+            <div class="carrusel-controles">
+                <button type="button" id="prev-carrusel" class="boton-carrusel">Anterior</button>
+                <button type="button" id="next-carrusel" class="boton-carrusel">Siguiente</button>
+            </div>
+        </div>
+    </section>
+
+
+
     <script src="js/servicios.js"></script>
+    <script src="js/carousel.js"></script>
 
     <footer>
         <p>© 2025 MAORA | Diseño de Interiores</p>

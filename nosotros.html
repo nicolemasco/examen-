@@ -7,12 +7,16 @@
     <title>Nosotros</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/tabs.css">
-    <link rel="stylesheet" href="css/tirafoto.css">
+    <link rel="stylesheet" href="css/nosotros.css">
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
 </head>
 
 <body>
 
-    <!-- Contenedor fijo para header + nav -->
     <div class="top-bar">
         <img src="/imagenes/logo.png" alt="Logo">
 
@@ -77,73 +81,81 @@
             </p>
         </div>
 
-        <div class="team-slider-container">
-            <h3>Nuestro Equipo</h3>
-            <p>Conoce a nuestro personal y en que se encuentran especilizados</p>
-
-            <button class="arrow left" id="prevBtn">‹</button>
-            <button class="arrow right" id="nextBtn">›</button>
-
-            <div class="team-slider" id="slider">
-
-                <div class="card">
-                    <img src="imagenes/persona1.png" alt="">
-                    <h3>Laura</h3>
-                    <p>Especialista en diseño de interiores contemporáneo y optimización de espacios.</p>
+        <section id="testimoniales" class="bajar3">
+            <div class="container">
+                <h3>Nuestro equipo</h3>
+                <p>Profesionales apasionados que transforman ideas en espacios con propósito.</p>
+                <div class="testimonials owl-carousel owl-theme">
+                    <div class="item">
+                        <h3>María Solís</h3>
+                        <img src="imagenes/persona1.png">
+                        <p>Especialista en diseño residencial, armonización de espacios y selección de paletas de color.
+                        </p>
+                    </div>
+                    <div class="item">
+                        <h3>Lucía Torres</h3>
+                        <img src="imagenes/persona2.png">
+                        <p>Project manager del estudio; coordina tiempos, proveedores y seguimiento al cliente.</p>
+                    </div>
+                    <div class="item">
+                        <h3>Carlos Herrera</h3>
+                        <img src="imagenes/persona3.png">
+                        <p>Encargado de diseño comercial y planificación espacial con enfoque moderno y funcional.</p>
+                    </div>
                 </div>
-
-                <div class="card">
-                    <img src="imagenes/persona2.png" alt="">
-                    <h3>Fabiola</h3>
-                    <p>Experta en iluminación ambiental y selección de paletas cromáticas equilibradas.</p>
-                </div>
-
-                <div class="card">
-                    <img src="imagenes/persona3.png" alt="">
-                    <h3>Mathias</h3>
-                    <p>Enfocado en acabados, texturas y materiales modernos.</p>
-                </div>
-
-                <div class="card">
-                    <img src="imagenes/persona1.png" alt="">
-                    <h3>Irma</h3>
-                    <p>Diseño espacial con enfoque funcional y equilibrio visual.</p>
-                </div>
-
             </div>
-        </div>
+        </section>
 
+        <section>
+            <h3>Conócenos Más</h3>
+            <p>Creamos este breve video para que puedas conocer de cerca quiénes somos, cómo trabajamos y qué nos inspira cada día.</p>
 
+            <div class="text-center">
+                <img src="imagenes/video.jpg" class="img-fluid foto">
+            </div>
+            <div class="pt-5"></div>
+            <div class="centrar-boton">
+                <button id="boton" class="botones" onclick="ejecutar('video','youtube')">Ingresar</button>
+            </div>
+            <div id="video" class="lightbox" onclick="ocultar('video','youtube')">
 
-
+                <div class="lightbox-container" onclick="event.stopPropagation();">
+                    <button onclick="ocultar('video','youtube')" class="lightbox-close">Cerrar ✕</button>
+                    <div class="video-container">
+                        <iframe id="youtube" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Scripts -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js "
-        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-        crossorigin=" anonymous " referrerpolicy="no-referrer "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js "
-        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-        crossorigin=" anonymous " referrerpolicy="no-referrer "></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <script>
         $('.owl-carousel').owlCarousel({
-
             loop: true,
             margin: 12,
             nav: true,
             dots: false,
             autoplay: true,
-
-        })
+            responsive: {
+                0: { items: 1 },
+                600: { items: 3 },
+                1000: { items: 3 }
+            }
+        });
     </script>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/tabs.js"></script>
-    <script src="js/tirafoto.js"></script>
-
+    <script src="js/opiniones2.js"></script>
+    <script src="js/nosotros.js"></script>
     <footer>
         <p>© 2025 MAORA | Diseño de Interiores</p>
     </footer>

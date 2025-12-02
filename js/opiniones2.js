@@ -23,7 +23,6 @@
     };
     fullHeight();
 
-    // loader
     var loader = function() {
         setTimeout(function() {
             if ($('#ftco-loader').length > 0) {
@@ -84,21 +83,17 @@
 
     $('nav .dropdown').hover(function() {
         var $this = $(this);
-        // 	 timer;
-        // clearTimeout(timer);
+       
         $this.addClass('show');
         $this.find('> a').attr('aria-expanded', true);
-        // $this.find('.dropdown-menu').addClass('animated-fast fadeInUp show');
+     
         $this.find('.dropdown-menu').addClass('show');
     }, function() {
         var $this = $(this);
-        // timer;
-        // timer = setTimeout(function(){
+
         $this.removeClass('show');
         $this.find('> a').attr('aria-expanded', false);
-        // $this.find('.dropdown-menu').removeClass('animated-fast fadeInUp show');
         $this.find('.dropdown-menu').removeClass('show');
-        // }, 100);
     });
 
 
@@ -112,18 +107,18 @@
         closeOnContentClick: true,
         closeBtnInside: false,
         fixedContentPos: true,
-        mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+        mainClass: 'mfp-no-margins mfp-with-zoom', 
         gallery: {
             enabled: true,
             navigateByImgClick: true,
-            preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+            preload: [0, 1]
         },
         image: {
             verticalFit: true
         },
         zoom: {
             enabled: true,
-            duration: 300 // don't foget to change the duration also in CSS
+            duration: 300 
         }
     });
 
@@ -209,3 +204,56 @@
 
 
 })(jQuery);
+
+//----
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    document.getElementById("btnCalcular").addEventListener("click", evaluacion);
+    document.getElementById("btnLimpiar").addEventListener("click", limpiar);
+
+});
+
+function evaluacion() {
+
+    let servicio = document.getElementById("charla").value;
+
+    if (servicio === "") {
+        Swal.fire("Selecciona el tipo de servicio ofrecido.");
+        return;
+    }
+
+    // Leer valores elegidos
+    let p1 = document.querySelector('input[name="p1"]:checked');
+    let p2 = document.querySelector('input[name="p2"]:checked');
+    let p3 = document.querySelector('input[name="p3"]:checked');
+
+    if (!p1 || !p2 || !p3) {
+        Swal.fire("Por favor responde todas las preguntas.");
+        return;
+    }
+
+    let total = Number(p1.value) + Number(p2.value) + Number(p3.value);
+    let porcentaje = (total / 15) * 100;
+
+    Swal.fire({
+        title: "Resultado enviado",
+        html: `
+            <b>Servicio evaluado:</b> ${servicio}<br><br>
+            <b>Satisfacción total:</b> ${porcentaje.toFixed(0)}%
+        `,
+        icon: "success",
+        confirmButtonColor: "#005cb8"
+    });
+
+}
+
+function limpiar() {
+    document.getElementById("encuesta").reset();
+
+    Swal.fire({
+        title: "Formulario limpiado",
+        icon: "info",
+        confirmButtonColor: "#005cb8"
+    });
+}

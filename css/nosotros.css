@@ -1,0 +1,155 @@
+
+/* ===============================
+   TESTIMONIALES
+   =============================== */
+
+#testimoniales .titulos {
+    color: #3a342b;
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.testimonials .item {
+    background-color: rgb(255, 255, 255);
+    border-radius: 38px;
+    padding: 35px 5px;
+    margin: 0 25px;
+    text-align: center;
+    color: #000000;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.testimonials .item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.testimonials .item img {
+    width: 110px;
+    height: 110px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-bottom: 18px;
+}
+
+.testimonials .item h3 {
+    font-size: 24px;
+    color: #000000a1;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.testimonials .item p {
+    font-size: 18px;
+    color: #000000;
+}
+
+
+.testimonials.owl-carousel .owl-item img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+
+/* Navegación del carrusel */
+.owl-nav button {
+    background: none !important;
+    border: none !important;
+}
+
+.owl-nav span {
+    font-size: 35px;
+    color: #3a342b;
+}
+
+.owl-nav span:hover {
+    color: #6d675e;
+}
+
+/**/
+.botones {
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  background: #85470da1;
+  border-radius: 25px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.50s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;        /* elimina el borde negro */
+  outline: none;       /* elimina borde al hacer click */
+}
+.centrar-boton {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+  /* Lightbox base */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lightbox-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+  }
+
+  .video-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: #fff;
+    color: #000;
+    border: none;
+    font-size: 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 6px 16px;
+      transition: all 0.50s cubic-bezier(0.4, 0, 0.2, 1);
+
+  }
+
+  .lightbox-close:hover {
+    background: #947b66;
+    color: #fff;
+  }
+
+  .foto {
+    max-width: 600px;   
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;     
+}
+

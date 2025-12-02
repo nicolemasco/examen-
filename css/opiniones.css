@@ -1,8 +1,3 @@
-/* ===============================
-   ESTÉTICA GLOBAL DEL CONTENIDO
-   =============================== */
-
-
 
 .banner-opiniones h1 {
     font-size: 70px;
@@ -18,12 +13,8 @@
 }
 
 
-/* ===============================
-   TARJETAS GENERALES (cuadro-blanco)
-   =============================== */
-
 .cuadro-blanco {
-    background-color: rgb(234, 223, 217); /* mismo que index */
+    background-color: rgb(234, 223, 217); 
     padding: 45px;
     border-radius: 38px;
     max-width: 650px;
@@ -39,7 +30,6 @@
     font-weight: 700;
 }
 
-/* Inputs y selects */
 .cuadro-blanco .form-control {
     width: 100%;
     max-width: 500px;
@@ -65,7 +55,6 @@
 }
 
 
-/* BOTÓN MAORA */
 .botones {
     background: #74533e; 
     color: #ffffff;
@@ -80,7 +69,7 @@
 }
 
 .botones:hover {
-    background: #ffedd9c4;
+    background: #d2c3b5;
     color: #3a342b;
     box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 }
@@ -101,7 +90,6 @@
     font-weight: 300;
 }
 
-/* Contenedor en una sola fila */
 .counter-row {
     display: flex;
     justify-content: center;
@@ -109,13 +97,12 @@
     flex-wrap: wrap;
 }
 
-/* Caja cuadrada */
 .counter-box {
     width: 250px;
     height: 250px;
     background-color: #fff;
     border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -156,15 +143,15 @@
 .testimonials .item {
     background-color: rgb(255, 255, 255);
     border-radius: 38px;
-    padding: 35px 25px;
+    padding: 35px 5px;
+    margin: 0 25px;
     text-align: center;
     color: #000000;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
     transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .testimonials .item:hover {
-    transform: translateY(-6px);
+    transform: translateY(-4px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
@@ -189,7 +176,6 @@
 }
 
 
-/* Navegación del carrusel */
 .owl-nav button {
     background: none !important;
     border: none !important;
@@ -202,4 +188,189 @@
 
 .owl-nav span:hover {
     color: #6d675e;
+}
+
+.encuesta-container {
+    max-width: 650px;
+    margin: 50px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+.encuesta-container h2 {
+    text-align: center;
+    color: #005cb8;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.encuesta-container p.subtitulo {
+    text-align: center;
+    color: #444;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.encuesta-container legend {
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.encuesta-container div {
+    margin-bottom: 12px;
+}
+
+.encuesta-container label,
+.encuesta-container select {
+    font-size: 15px;
+}
+
+.encuesta-container select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    transition: 0.2s ease;
+}
+
+.encuesta-container select:focus {
+    border-color: #005cb8;
+    box-shadow: 0 0 6px rgba(0,92,184,0.3);
+}
+
+.encuesta-container input[type="radio"] {
+    margin-right: 8px;
+}
+
+#btnCalcular,
+#btnLimpiar {
+    background-color: #005cb8;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    margin-right: 10px;
+}
+
+#btnCalcular:hover,
+#btnLimpiar:hover {
+    background-color: #d2c3b5;
+    color: #000000;
+}
+
+#btnLimpiar {
+    background-color: #888;
+}
+
+#btnLimpiar:hover {
+    background-color: #666;
+}
+
+.encuesta-container input,
+.encuesta-container select,
+.encuesta-container textarea {
+  display: inline-block; 
+  margin-top: 8px;
+}
+
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+    text-align: center;
+    padding: 10px 0;
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.top-bar img {
+    width: 120px;
+}
+
+.encuesta-container {
+    max-width: 900px;
+    margin: 110px auto 40px;
+    padding: 26px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+}
+
+.encuesta-container h2 {
+    color: #6d675e;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.encuesta-container .lead {
+    text-align: center;
+    color: #6d675e;
+    margin-bottom: 20px;
+}
+
+.campo {
+    margin-bottom: 18px;
+}
+
+.pregunta {
+    background: #fbf9f6;
+    padding: 14px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.pregunta legend {
+    font-weight: 600;
+    color: #3a342b;
+    margin-bottom: 8px;
+}
+
+.radios {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.radios label {
+    font-size: 14px;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.acciones {
+    text-align: right;
+    margin-top: 20px;
+}
+
+#btnCalcular,
+#btnLimpiar {
+    background: #85470da1;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+#btnLimpiar {
+    background: #8b8b8b;
+    margin-right: 12px;
+}
+
+.encuesta-container input,
+.encuesta-container select {
+    display: inline-block !important;
 }

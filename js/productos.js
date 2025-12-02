@@ -11,7 +11,6 @@ async function cargarYMostrarTodos() {
     const resp = await fetch("./js/productos.json");
     if (!resp.ok) throw new Error("No se pudo cargar productos.json — revisa la ruta");
     const datos = await resp.json();
-    // mostrar todos por defecto
     mostrarResultados(datos.productos);
   } catch (err) {
     console.error(err);
@@ -53,7 +52,6 @@ function mostrarResultados(lista) {
   }
 
   lista.forEach(p => {
-    // arreglar ruta de imagen si algún producto tiene ruta inconsistente
     let imgSrc = p.imagen || "imagenes/productos/placeholder.jpg";
 
     contenedor.innerHTML += `

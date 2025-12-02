@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap'); 
 
 body {
   overflow-x: hidden;
-  font-family: "Manrope", sans-serif;
+  font-family: "Manrope", sans-serif !important;
   background-color: #fffbf4;
 }
 
@@ -111,7 +111,6 @@ p {
   justify-content: center;
   align-items: center;
   min-height: 80vh;
-  /* Centra verticalmente */
   color: #ffe0c3;
   font-weight: 600;
 
@@ -165,7 +164,6 @@ label {
 
 }
 
-/*controles input*/
 input {
   display: grid;
   margin-top: 20px;
@@ -196,7 +194,6 @@ input {
   z-index: 1000;
   display: flex;
   flex-direction: column;
-  /* primero logo, luego nav */
   align-items: center;
   padding: 10px 0;
 }
@@ -227,16 +224,15 @@ nav li:hover {
 }
 
 
-/* Evitar letra azul y línea subrayada solo para los enlaces del menú */
 .top-bar nav ul li a {
-    color: #6d675e;       /* color original de tu menú */
-    text-decoration: none; /* quita la línea azul */
+    color: #6d675e;       
+    text-decoration: none; 
     font-weight: 600;
     transition: color 0.4s ease;
 }
 
 .top-bar nav ul li a:hover {
-    color: #160e06;       /* tu efecto hover actual */
+    color: #160e06;       
 }
 
 /* --- banner inicio --- */
@@ -280,6 +276,18 @@ nav li:hover {
     background-image:
         linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
         url("/imagenes/opiniones.jpg");
+}
+
+.banner-galeria {
+    background-image:
+        linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+        url("/imagenes/galeria.jpg");
+}
+
+.banner-contacto {
+    background-image:
+        linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+        url("/imagenes/contacto.jpg");
 }
 
 
@@ -356,5 +364,6 @@ footer {
   padding: 20px;
   margin-top: 40px;
 }
+
 
 
