@@ -90,63 +90,70 @@
         </div>
     </section>
 
-    <section class="encuesta-container">
-        <h3>Tu opinión sobre nuestro servicio</h3>
-        <p class="lead">Califica tu experiencia. Tus respuestas generan una puntuación total.</p>
+<section class="encuesta-container">
+    <h2>Tu opinión sobre nuestro servicio</h2>
+    <p class="lead">Califica tu experiencia. Tus respuestas generan una puntuación total.</p>
 
-        <form id="encuesta" onsubmit="return false;">
+    <form id="form2" onsubmit="return false;">
+        <!-- Correo del usuario -->
+        <div class="campo-correo">
+    <label for="usuario_email">Tu correo:</label>
+    <input type="email" id="usuario_email" name="usuario_email" placeholder="correo@ejemplo.com" class="input-correo" required>
+</div>
 
-            <div class="campo">
-                <label for="charla">Tipo de servicio ofrecido:</label>
-                <select id="charla" required>
-                    <option value="">Selecciona un servicio</option>
-                    <option value="Diseño de interiores">Diseño de interiores</option>
-                    <option value="Decoración de eventos">Decoración de eventos</option>
-                    <option value="Asesoría de materiales">Asesoría de materiales</option>
-                    <option value="Renovación de espacios">Renovación de espacios</option>
-                </select>
+
+        <!-- Select servicio -->
+        <div class="campo">
+            <label for="charla">Tipo de servicio ofrecido:</label>
+            <select id="charla" name="servicio" required>
+                <option value="">Selecciona un servicio</option>
+                <option value="Diseño de interiores">Diseño de interiores</option>
+                <option value="Decoración de eventos">Decoración de eventos</option>
+                <option value="Asesoría de materiales">Asesoría de materiales</option>
+                <option value="Renovación de espacios">Renovación de espacios</option>
+            </select>
+        </div>
+
+        <!-- Preguntas con radios -->
+        <fieldset class="pregunta">
+            <legend>Calidad del diseño realizado</legend>
+            <div class="radios">
+                <label><input type="radio" name="p1" value="1"> Malo</label>
+                <label><input type="radio" name="p1" value="2"> Regular</label>
+                <label><input type="radio" name="p1" value="3"> Bueno</label>
+                <label><input type="radio" name="p1" value="4"> Muy bueno</label>
+                <label><input type="radio" name="p1" value="5"> Excelente</label>
             </div>
+        </fieldset>
 
-            <fieldset class="pregunta">
-                <legend>Calidad del diseño realizado</legend>
-                <div class="radios">
-                    <label><input type="radio" name="p1" value="1"> Malo</label>
-                    <label><input type="radio" name="p1" value="2"> Regular</label>
-                    <label><input type="radio" name="p1" value="3"> Bueno</label>
-                    <label><input type="radio" name="p1" value="4"> Muy bueno</label>
-                    <label><input type="radio" name="p1" value="5"> Excelente</label>
-                </div>
-            </fieldset>
-
-            <fieldset class="pregunta">
-                <legend>Comunicación durante el proceso</legend>
-                <div class="radios">
-                    <label><input type="radio" name="p2" value="1"> Malo</label>
-                    <label><input type="radio" name="p2" value="2"> Regular</label>
-                    <label><input type="radio" name="p2" value="3"> Bueno</label>
-                    <label><input type="radio" name="p2" value="4"> Muy bueno</label>
-                    <label><input type="radio" name="p2" value="5"> Excelente</label>
-                </div>
-            </fieldset>
-
-            <fieldset class="pregunta">
-                <legend>Tiempo y entrega del servicio</legend>
-                <div class="radios">
-                    <label><input type="radio" name="p3" value="1"> Malo</label>
-                    <label><input type="radio" name="p3" value="2"> Regular</label>
-                    <label><input type="radio" name="p3" value="3"> Bueno</label>
-                    <label><input type="radio" name="p3" value="4"> Muy bueno</label>
-                    <label><input type="radio" name="p3" value="5"> Excelente</label>
-                </div>
-            </fieldset>
-
-            <div class="acciones">
-                <button id="btnLimpiar" type="button">Limpiar</button>
-                <button id="btnCalcular" type="button">Enviar opinión</button>
+        <fieldset class="pregunta">
+            <legend>Comunicación durante el proceso</legend>
+            <div class="radios">
+                <label><input type="radio" name="p2" value="1"> Malo</label>
+                <label><input type="radio" name="p2" value="2"> Regular</label>
+                <label><input type="radio" name="p2" value="3"> Bueno</label>
+                <label><input type="radio" name="p2" value="4"> Muy bueno</label>
+                <label><input type="radio" name="p2" value="5"> Excelente</label>
             </div>
+        </fieldset>
 
-        </form>
-    </section>
+        <fieldset class="pregunta">
+            <legend>Tiempo y entrega del servicio</legend>
+            <div class="radios">
+                <label><input type="radio" name="p3" value="1"> Malo</label>
+                <label><input type="radio" name="p3" value="2"> Regular</label>
+                <label><input type="radio" name="p3" value="3"> Bueno</label>
+                <label><input type="radio" name="p3" value="4"> Muy bueno</label>
+                <label><input type="radio" name="p3" value="5"> Excelente</label>
+            </div>
+        </fieldset>
+
+        <div class="acciones">
+            <button id="btnLimpiar" type="button">Limpiar</button>
+            <button id="btnCalcular" type="button">Enviar opinión</button>
+        </div>
+    </form>
+</section>
 
     <footer>
         <p>© 2025 MAORA | Diseño de Interiores</p>

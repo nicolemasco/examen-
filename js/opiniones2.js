@@ -206,24 +206,33 @@
 })(jQuery);
 
 //----
-
 document.addEventListener("DOMContentLoaded", function() {
-
-    document.getElementById("btnCalcular").addEventListener("click", evaluacion);
+    document.getElementById("btnCalcular").addEventListener("click", enviarEncuesta);
     document.getElementById("btnLimpiar").addEventListener("click", limpiar);
-
 });
 
-function evaluacion() {
-
+function enviarEncuesta() {
     let servicio = document.getElementById("charla").value;
+    let emailUsuario = document.getElementById("usuario_email").value;
+
+    // Expresión regular para validar email
+    let expressionEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
 
     if (servicio === "") {
         Swal.fire("Selecciona el tipo de servicio ofrecido.");
         return;
     }
 
-    // Leer valores elegidos
+    if (emailUsuario === "") {
+        Swal.fire("Ingresa tu correo.");
+        return;
+    }
+
+    if (!expressionEmail.test(emailUsuario)) {
+        Swal.fire("El correo ingresado no es válido.");
+        return;
+    }
+
     let p1 = document.querySelector('input[name="p1"]:checked');
     let p2 = document.querySelector('input[name="p2"]:checked');
     let p3 = document.querySelector('input[name="p3"]:checked');
@@ -238,18 +247,28 @@ function evaluacion() {
 
     Swal.fire({
         title: "Resultado enviado",
-        html: `
-            <b>Servicio evaluado:</b> ${servicio}<br><br>
-            <b>Satisfacción total:</b> ${porcentaje.toFixed(0)}%
-        `,
+        html: `<b>Servicio evaluado:</b> ${servicio}<br>
+               <b>Satisfacción total:</b> ${porcentaje.toFixed(0)}%`,
         icon: "success",
         confirmButtonColor: "#005cb8"
     });
 
+    // Enviar por EmailJS
+    emailjs.sendForm(
+        'service_6qk362b',
+        'template_z42jas7',
+        '#form2',
+        'AAoFUA_QhvnDBKIhP'
+    )
+    .then(function(response) {
+        console.log('Correo enviado correctamente', response.status, response.text);
+    }, function(error) {
+        console.log('Error al enviar correo', error);
+    });
 }
 
 function limpiar() {
-    document.getElementById("encuesta").reset();
+    document.getElementById("form2").reset();
 
     Swal.fire({
         title: "Formulario limpiado",
