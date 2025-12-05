@@ -1,85 +1,77 @@
-/* js/easydeco.js
-   - Solo JS: sin HTML ni CSS dentro del archivo.
-   - Usa createElement / appendChild / classList
-   - Base de datos (CATALOGO) con placeholders
-   - Validaciones con SweetAlert2
-   - localStorage para historial
-   - jsPDF preparado para descarga
-*/
+
 
 /* =======================
    1) CATALOGO (JSON) - 5 estilos × 9 items (6 materiales + 3 productos)
-   Imágenes: placeholders via.placeholder.com
    ======================= */
 const CATALOGO = [
   {
-    estiloId: 'moderno', estiloNombre: 'Moderno',
+    estiloId: 'moderno', estiloNombre: 'Moderno', img:'/imagenes/easydeco/maderaClara.webp',
     items: [
-      { id:'m_mod_1', tipo:'material', nombre:'Madera clara', descripcion:'Tarima roble claro', precioPorM2:28, img:'https://via.placeholder.com/400x300?text=Madera+clara' },
-      { id:'m_mod_2', tipo:'material', nombre:'Vidrio templado', descripcion:'Vidrio 8mm', precioPorM2:35, img:'https://via.placeholder.com/400x300?text=Vidrio' },
-      { id:'m_mod_3', tipo:'material', nombre:'Panel LED', descripcion:'Panel luz empotrada', precioPorM2:18, img:'https://via.placeholder.com/400x300?text=Panel+LED' },
-      { id:'m_mod_4', tipo:'material', nombre:'Porcelanato', descripcion:'Porcelanato neutro', precioPorM2:30, img:'https://via.placeholder.com/400x300?text=Porcelanato' },
-      { id:'m_mod_5', tipo:'material', nombre:'Pintura gris', descripcion:'Pintura interior premium', precioPorM2:10, img:'https://via.placeholder.com/400x300?text=Pintura+gris' },
-      { id:'m_mod_6', tipo:'material', nombre:'Acabados metal', descripcion:'Perfiles y acabados', precioPorM2:22, img:'https://via.placeholder.com/400x300?text=Metal' },
-      { id:'p_mod_1', tipo:'producto', nombre:'Lámpara LED', descripcion:'Lámpara colgante', precioUnitario:85, img:'https://via.placeholder.com/400x300?text=Lampara+LED' },
-      { id:'p_mod_2', tipo:'producto', nombre:'Mesa de centro', descripcion:'Mesa baja moderna', precioUnitario:120, img:'https://via.placeholder.com/400x300?text=Mesa' },
-      { id:'p_mod_3', tipo:'producto', nombre:'Estantería', descripcion:'Estantería modular', precioUnitario:160, img:'https://via.placeholder.com/400x300?text=Estanteria' }
+      { id:'m_mod_1', tipo:'material', nombre:'Madera clara', descripcion:'Tarima roble claro', precioPorM2:28,  img:'/imagenes/easydeco/maderaClara.webp'},
+      { id:'m_mod_2', tipo:'material', nombre:'Vidrio templado', descripcion:'Vidrio 8mm', precioPorM2:35,img: '/imagenes/easydeco/vidrio.webp' },
+      { id:'m_mod_3', tipo:'material', nombre:'Panel LED', descripcion:'Panel luz empotrada', precioPorM2:18, img:'/imagenes/easydeco/panel.jpg' },
+      { id:'m_mod_4', tipo:'material', nombre:'Porcelanato', descripcion:'Porcelanato neutro', precioPorM2:30, img:'/imagenes/easydeco/porcenalato.jpg' },
+      { id:'m_mod_5', tipo:'material', nombre:'Pintura gris', descripcion:'Pintura interior premium', precioPorM2:10, img:'/imagenes/easydeco/gris.jpg' },
+      { id:'m_mod_6', tipo:'material', nombre:'Acabados metal', descripcion:'Perfiles y acabados', precioPorM2:22, img:'/imagenes/easydeco/metal.webp' },
+      { id:'p_mod_1', tipo:'producto', nombre:'Lámpara LED', descripcion:'Lámpara colgante', precioUnitario:85, img:'/imagenes/easydeco/lampara.jpg' },
+      { id:'p_mod_2', tipo:'producto', nombre:'Mesa de centro', descripcion:'Mesa baja moderna', precioUnitario:120, img:'/imagenes/easydeco/mesaModerna.jpg'},
+      { id:'p_mod_3', tipo:'producto', nombre:'Estantería', descripcion:'Estantería modular', precioUnitario:160, img:'/imagenes/easydeco/estanteria.jpg' }
     ]
   },
   {
     estiloId: 'industrial', estiloNombre: 'Industrial',
     items: [
-      { id:'m_ind_1', tipo:'material', nombre:'Ladrillo visto', descripcion:'Revestimiento ladrillo', precioPorM2:25, img:'https://via.placeholder.com/400x300?text=Ladrillo' },
-      { id:'m_ind_2', tipo:'material', nombre:'Hormigón', descripcion:'Hormigón pulido', precioPorM2:30, img:'https://via.placeholder.com/400x300?text=Hormigon' },
-      { id:'m_ind_3', tipo:'material', nombre:'Acero', descripcion:'Acero negro', precioPorM2:32, img:'https://via.placeholder.com/400x300?text=Acero' },
-      { id:'m_ind_4', tipo:'material', nombre:'Madera reciclada', descripcion:'Madera con textura', precioPorM2:26, img:'https://via.placeholder.com/400x300?text=Madera+reciclada' },
-      { id:'m_ind_5', tipo:'material', nombre:'Pintura oscura', descripcion:'Pintura carbón', precioPorM2:12, img:'https://via.placeholder.com/400x300?text=Pintura+oscura' },
-      { id:'m_ind_6', tipo:'material', nombre:'Cemento decorativo', descripcion:'Acabado cemento', precioPorM2:20, img:'https://via.placeholder.com/400x300?text=Cemento' },
-      { id:'p_ind_1', tipo:'producto', nombre:'Lámpara industrial', descripcion:'Lámpara vintage', precioUnitario:95, img:'https://via.placeholder.com/400x300?text=Lampara+Industrial' },
-      { id:'p_ind_2', tipo:'producto', nombre:'Mesa metal-madera', descripcion:'Mesa mezcla metal y madera', precioUnitario:220, img:'https://via.placeholder.com/400x300?text=Mesa+metal' },
-      { id:'p_ind_3', tipo:'producto', nombre:'Sofá cuero', descripcion:'Sofá 3 plazas', precioUnitario:450, img:'https://via.placeholder.com/400x300?text=Sofa' }
+      { id:'m_ind_1', tipo:'material', nombre:'Ladrillo visto', descripcion:'Revestimiento ladrillo', precioPorM2:25, img:'/imagenes/easydeco/ladrillo.jpeg'},
+      { id:'m_ind_2', tipo:'material', nombre:'Hormigón', descripcion:'Hormigón pulido', precioPorM2:30, img:'/imagenes/easydeco/hormigon.jpg' },
+      { id:'m_ind_3', tipo:'material', nombre:'Acero', descripcion:'Acero negro', precioPorM2:32, img:'/imagenes/easydeco/aceroNegro.webp' },
+      { id:'m_ind_4', tipo:'material', nombre:'Madera reciclada', descripcion:'Madera con textura', precioPorM2:26, img:'/imagenes/easydeco/maderaReciclada.webp'},
+      { id:'m_ind_5', tipo:'material', nombre:'Pintura oscura', descripcion:'Pintura carbón', precioPorM2:12, img:'/imagenes/easydeco/pinturaCarbon.webp' },
+      { id:'m_ind_6', tipo:'material', nombre:'Cemento decorativo', descripcion:'Acabado cemento', precioPorM2:20, img:'/imagenes/easydeco/acabadoCemento.avif' },
+      { id:'p_ind_1', tipo:'producto', nombre:'Lámpara industrial', descripcion:'Lámpara vintage', precioUnitario:95, img:'/imagenes/easydeco/lamparaIndustrial.webp' },
+      { id:'p_ind_2', tipo:'producto', nombre:'Mesa metal-madera', descripcion:'Mesa mezcla metal y madera', precioUnitario:220, img:'/imagenes/easydeco/mesaIndustrial.webp' },
+      { id:'p_ind_3', tipo:'producto', nombre:'Sofá cuero', descripcion:'Sofá 3 plazas', precioUnitario:450, img:'/imagenes/easydeco/sofaIndustrial.jpg' }
     ]
   },
   {
     estiloId: 'clasico', estiloNombre: 'Clásico',
     items: [
-      { id:'m_cla_1', tipo:'material', nombre:'Mármol', descripcion:'Pisos y revestimientos', precioPorM2:80, img:'https://via.placeholder.com/400x300?text=Marmol' },
-      { id:'m_cla_2', tipo:'material', nombre:'Madera oscura', descripcion:'Tarima y paneles', precioPorM2:34, img:'https://via.placeholder.com/400x300?text=Madera+oscura' },
-      { id:'m_cla_3', tipo:'material', nombre:'Molduras', descripcion:'Molduras y cornisas', precioPorM2:18, img:'https://via.placeholder.com/400x300?text=Molduras' },
-      { id:'m_cla_4', tipo:'material', nombre:'Yeso', descripcion:'Yeso ornamental', precioPorM2:33, img:'https://via.placeholder.com/400x300?text=Yeso' },
-      { id:'m_cla_5', tipo:'material', nombre:'Tapiz', descripcion:'Revestimiento textil', precioPorM2:22, img:'https://via.placeholder.com/400x300?text=Tapiz' },
-      { id:'m_cla_6', tipo:'material', nombre:'Panel madera lujo', descripcion:'Paneles lujosos', precioPorM2:55, img:'https://via.placeholder.com/400x300?text=Panel' },
-      { id:'p_cla_1', tipo:'producto', nombre:'Lámpara clásica', descripcion:'Lámpara con detalle', precioUnitario:130, img:'https://via.placeholder.com/400x300?text=Lampara+clasica' },
-      { id:'p_cla_2', tipo:'producto', nombre:'Mueble tocador', descripcion:'Mueble clásico', precioUnitario:320, img:'https://via.placeholder.com/400x300?text=Mueble' },
-      { id:'p_cla_3', tipo:'producto', nombre:'Cuadro decorativo', descripcion:'Obra para pared', precioUnitario:150, img:'https://via.placeholder.com/400x300?text=Cuadro' }
+      { id:'m_cla_1', tipo:'material', nombre:'Mármol', descripcion:'Pisos y revestimientos', precioPorM2:80, img:'/imagenes/easydeco/marmol.webp' },
+      { id:'m_cla_2', tipo:'material', nombre:'Madera oscura', descripcion:'Tipo de suelo', precioPorM2:34, img:'/imagenes/easydeco/maderaClasico.jpg' },
+      { id:'m_cla_3', tipo:'material', nombre:'Molduras', descripcion:'Molduras y cornisas', precioPorM2:18, img:'/imagenes/easydeco/molduras.jpg' },
+      { id:'m_cla_4', tipo:'material', nombre:'Yeso', descripcion:'Yeso ornamental', precioPorM2:33, img:'/imagenes/easydeco/yeso.avif' },
+      { id:'m_cla_5', tipo:'material', nombre:'Tapiz', descripcion:'Revestimiento textil', precioPorM2:22, img:'/imagenes/easydeco/textil.jpg' },
+      { id:'m_cla_6', tipo:'material', nombre:'Panel madera lujo', descripcion:'Paneles lujosos', precioPorM2:55, img:'/imagenes/easydeco/panelMadera.webp'},
+      { id:'p_cla_1', tipo:'producto', nombre:'Lámpara clásica', descripcion:'Lámpara con detalle', precioUnitario:130, img:'/imagenes/easydeco/lamparaClasica.jpg' },
+      { id:'p_cla_2', tipo:'producto', nombre:'Mueble tocador', descripcion:'Mueble clásico', precioUnitario:320, img:'/imagenes/easydeco/muebleClasico.webp' },
+      { id:'p_cla_3', tipo:'producto', nombre:'Cuadro decorativo', descripcion:'Obra para pared', precioUnitario:150, img:'/imagenes/easydeco/cuadro.webp' }
     ]
   },
   {
     estiloId: 'minimalista', estiloNombre: 'Minimalista',
     items: [
-      { id:'m_min_1', tipo:'material', nombre:'Pintura blanca', descripcion:'Acabado mate', precioPorM2:8, img:'https://via.placeholder.com/400x300?text=Pintura+blanca' },
-      { id:'m_min_2', tipo:'material', nombre:'Madera clara', descripcion:'Tarima minimal', precioPorM2:28, img:'https://via.placeholder.com/400x300?text=Madera+clara' },
-      { id:'m_min_3', tipo:'material', nombre:'Cerámica', descripcion:'Azulejo simple', precioPorM2:20, img:'https://via.placeholder.com/400x300?text=Ceramica' },
-      { id:'m_min_4', tipo:'material', nombre:'Microcemento', descripcion:'Acabado continuo', precioPorM2:34, img:'https://via.placeholder.com/400x300?text=Microcemento' },
-      { id:'m_min_5', tipo:'material', nombre:'Panel liso', descripcion:'Paneles sencillos', precioPorM2:12, img:'https://via.placeholder.com/400x300?text=Panel+liso' },
-      { id:'m_min_6', tipo:'material', nombre:'Iluminación LED', descripcion:'Sistema LED integrado', precioPorM2:9, img:'https://via.placeholder.com/400x300?text=LED' },
-      { id:'p_min_1', tipo:'producto', nombre:'Sillón minimal', descripcion:'Silla tapizada', precioUnitario:200, img:'https://via.placeholder.com/400x300?text=Sillon' },
-      { id:'p_min_2', tipo:'producto', nombre:'Mesa baja', descripcion:'Mesa baja minimal', precioUnitario:110, img:'https://via.placeholder.com/400x300?text=Mesa' },
-      { id:'p_min_3', tipo:'producto', nombre:'Plafón LED', descripcion:'Luz de techo', precioUnitario:70, img:'https://via.placeholder.com/400x300?text=Plafon' }
+      { id:'m_min_1', tipo:'material', nombre:'Pintura blanca', descripcion:'Acabado mate', precioPorM2:8, img:'/imagenes/easydeco/pinturaBlanca.jpg' },
+      { id:'m_min_2', tipo:'material', nombre:'Madera clara', descripcion:'Madera para piso', precioPorM2:28, img:'/imagenes/easydeco/maderaMinimalista.jpg' },
+      { id:'m_min_3', tipo:'material', nombre:'Cerámica', descripcion:'Azulejo simple', precioPorM2:20, img:'/imagenes/easydeco/azulejo.jpg' },
+      { id:'m_min_4', tipo:'material', nombre:'Microcemento', descripcion:'Acabado continuo', precioPorM2:34, img:'/imagenes/easydeco/micro.jpg'},
+      { id:'m_min_5', tipo:'material', nombre:'Panel liso', descripcion:'Paneles sencillos', precioPorM2:12, img:'/imagenes/easydeco/panelMin.jpg' },
+      { id:'m_min_6', tipo:'material', nombre:'Iluminación LED', descripcion:'Sistema LED integrado', precioPorM2:9, img:'/imagenes/easydeco/led.jpg' },
+      { id:'p_min_1', tipo:'producto', nombre:'Sillón minimal', descripcion:'Silla tapizada', precioUnitario:200, img:'/imagenes/easydeco/silla.jpg' },
+      { id:'p_min_2', tipo:'producto', nombre:'Mesa baja', descripcion:'Mesa baja minimal', precioUnitario:110, img:'/imagenes/easydeco/mesaMin.webp' },
+      { id:'p_min_3', tipo:'producto', nombre:'Plafón LED', descripcion:'Luz de techo', precioUnitario:70, img:'/imagenes/easydeco/plafon.jpg' }
     ]
   },
   {
     estiloId: 'rustico', estiloNombre: 'Rústico',
     items: [
-      { id:'m_rus_1', tipo:'material', nombre:'Madera natural', descripcion:'Madera maciza', precioPorM2:30, img:'https://via.placeholder.com/400x300?text=Madera+natural' },
-      { id:'m_rus_2', tipo:'material', nombre:'Piedra', descripcion:'Revestimiento piedra', precioPorM2:36, img:'https://via.placeholder.com/400x300?text=Piedra' },
-      { id:'m_rus_3', tipo:'material', nombre:'Rattan', descripcion:'Fibras naturales', precioPorM2:18, img:'https://via.placeholder.com/400x300?text=Rattan' },
-      { id:'m_rus_4', tipo:'material', nombre:'Barniz', descripcion:'Barniz protector', precioPorM2:10, img:'https://via.placeholder.com/400x300?text=Barniz' },
-      { id:'m_rus_5', tipo:'material', nombre:'Yeso rústico', descripcion:'Yeso con textura', precioPorM2:22, img:'https://via.placeholder.com/400x300?text=Yeso' },
-      { id:'m_rus_6', tipo:'material', nombre:'Ladrillo rústico', descripcion:'Ladrillo rústico', precioPorM2:24, img:'https://via.placeholder.com/400x300?text=Ladrillo' },
-      { id:'p_rus_1', tipo:'producto', nombre:'Mesa rústica', descripcion:'Mesa madera maciza', precioUnitario:260, img:'https://via.placeholder.com/400x300?text=Mesa+rustica' },
-      { id:'p_rus_2', tipo:'producto', nombre:'Lámpara mimbre', descripcion:'Lámpara fibras', precioUnitario:75, img:'https://via.placeholder.com/400x300?text=Lampara' },
-      { id:'p_rus_3', tipo:'producto', nombre:'Alfombra rústica', descripcion:'Alfombra natural', precioUnitario:95, img:'https://via.placeholder.com/400x300?text=Alfombra' }
+      { id:'m_rus_1', tipo:'material', nombre:'Madera natural', descripcion:'Madera maciza', precioPorM2:30, img:'/imagenes/easydeco/maderaRus.jpg' },
+      { id:'m_rus_2', tipo:'material', nombre:'Piedra', descripcion:'Revestimiento piedra', precioPorM2:36, img:'/imagenes/easydeco/revestimiento.jpg' },
+      { id:'m_rus_3', tipo:'material', nombre:'Rattan', descripcion:'Fibras naturales', precioPorM2:18, img:'/imagenes/easydeco/rattan.jpg' },
+      { id:'m_rus_4', tipo:'material', nombre:'Barniz', descripcion:'Barniz protector', precioPorM2:10, img:'/imagenes/easydeco/barniz.jpg' },
+      { id:'m_rus_5', tipo:'material', nombre:'Yeso rústico', descripcion:'Yeso con textura', precioPorM2:22, img:'/imagenes/easydeco/yesoRus.webp' },
+      { id:'m_rus_6', tipo:'material', nombre:'Ladrillo rústico', descripcion:'Ladrillo rústico', precioPorM2:24, img:'/imagenes/easydeco/ladrilloRus.jpg' },
+      { id:'p_rus_1', tipo:'producto', nombre:'Mesa rústica', descripcion:'Mesa madera maciza', precioUnitario:260, img:'/imagenes/easydeco/mesaRus.webp' },
+      { id:'p_rus_2', tipo:'producto', nombre:'Lámpara mimbre', descripcion:'Lámpara fibras', precioUnitario:75, img:'/imagenes/easydeco/lamparaRus.jpg' },
+      { id:'p_rus_3', tipo:'producto', nombre:'Alfombra rústica', descripcion:'Alfombra natural', precioUnitario:95, img:'/imagenes/easydeco/alfombraRus.jpg' }
     ]
   }
 ];
@@ -106,8 +98,7 @@ const desgloseEl = document.getElementById('desglose');
 
 const btnDescargarCotizacion = document.getElementById('btnDescargarCotizacion');
 const btnEnviarCorreo = document.getElementById('btnEnviarCorreo');
-const btnExportarJSON = document.getElementById('btnExportarJSON');
-
+btnEnviarCorreo && btnEnviarCorreo.addEventListener('click', enviarCorreoEmailJS);
 const historialListEl = document.getElementById('historial-list');
 
 /* =======================
@@ -129,7 +120,6 @@ function shakeElemento(el) {
 
 /* =======================
    4) RENDER GALERÍA ESTILOS
-   (Filtrado por estilo se hace luego)
    ======================= */
 function renderizarGaleriaEstilos() {
   galeriaEl.innerHTML = '';
@@ -149,7 +139,6 @@ function renderizarGaleriaEstilos() {
     // ensamblar
     card.appendChild(img);
     card.appendChild(nombre);
-    // hide price/desc for style cards: reuse design but minimal
     card.appendChild(btn);
     galeriaEl.appendChild(card);
   });
@@ -171,8 +160,8 @@ function seleccionarEstilo(estiloId) {
 }
 
 /* =======================
-   6) RENDER ITEMS (createElement, sin HTML en strings)
-   - materiales: botón seleccionar (sin cantidad)
+   6) RENDER ITEMS (createElement
+   - materiales: boton seleccionar (sin cantidad)
    - productos: seleccionar + input cantidad (aparece)
    ======================= */
 function renderizarItems(estiloId) {
@@ -331,7 +320,6 @@ function procesarCalculo(area, estiloId, matIds, prodSel) {
     totalFinal
   };
 
-  // mostrar resultado (texto EXACTO solicitado)
   mostrarDesglose(window.easyDecoCotizacionActual);
   Swal.fire({ icon: 'success', title: 'Cotización lista', text: `Total: $${window.easyDecoCotizacionActual.totalFinal.toFixed(2)}` });
   renderizarHistorial();
@@ -483,28 +471,13 @@ function eliminarHistorial(i) {
   Swal.fire({ icon:'success', title:'Eliminado' });
 }
 
-function exportarHistorialJSON() {
-  const data = localStorage.getItem('easydeco_historial') || '[]';
-  const blob = new Blob([data], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `easydeco_historial_${(new Date()).toISOString().slice(0,10)}.json`;
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  URL.revokeObjectURL(url);
-}
 
-/* =======================
-   10) PDF y Email (preparado)
-   ======================= */
 function descargarPDFCotizacion() {
   if (!window.easyDecoCotizacionActual) return Swal.fire({ icon:'info', title:'Nada para descargar', text:'Calculá la cotización primero.' });
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
   const q = window.easyDecoCotizacionActual;
-  doc.setFontSize(18); doc.text('EasyDeCo — Cotización', 14, 20);
+  doc.setFontSize(18); doc.text('EasyDeco — Cotización', 14, 20);
   doc.setFontSize(12);
   doc.text(`Fecha: ${new Date(q.fecha).toLocaleString()}`, 14, 30);
   doc.text(`Habitación: ${q.tipo}`, 14, 38);
@@ -536,11 +509,49 @@ function descargarManualPDF() {
 }
 
 function enviarCorreoEmailJS() {
-  if (!window.easyDecoCotizacionActual) return Swal.fire({ icon:'info', title:'Nada para enviar', text:'Calculá la cotización primero.' });
-  Swal.fire({ icon:'info', title:'Email listo', text:'Integra tus credenciales de EmailJS en este archivo para envío real.' });
-  // P.ej:
-  // emailjs.init('TU_USER_ID');
-  // emailjs.send('service_xxx','template_xxx', { to_email: window.easyDecoCotizacionActual.correo, total: window.easyDecoCotizacionActual.totalFinal });
+// 1. Verifica si hay cotización antes de hacer cualquier cosa
+if (!window.easyDecoCotizacionActual) return Swal.fire({ icon:'info', title:'Nada para enviar', text:'Calculá la cotización primero.' });
+ 
+const q = window.easyDecoCotizacionActual;
+
+// --- 2. PREPARAR DESGLOSE DE MATERIALES ---
+let textoMateriales = "N/A";
+if (q.detalleMateriales.length > 0) {
+textoMateriales = q.detalleMateriales.map(m => 
+`${m.nombre} ($${m.precioPorM2.toFixed(2)}/m²) - Costo: $${m.costo.toFixed(2)}`
+).join('\n');
+}
+
+// --- 3. PREPARAR DESGLOSE DE PRODUCTOS ---
+let textoProductos = "N/A";
+if (q.detalleProductos.length > 0) {
+textoProductos = q.detalleProductos.map(p => 
+`${p.nombre} ($${p.precioUnitario.toFixed(2)}/u) x ${p.cantidad} - Costo: $${p.costo.toFixed(2)}`
+).join('\n');
+}
+
+
+emailjs.init('AAoFUA_QhvnDBKIhP'); 
+emailjs.send('service_6qk362b', 'template_z42jas7', { 
+// Variables de cotización
+to_email: q.correo,
+total_final: q.totalFinal.toFixed(2),
+area_total: q.area,
+estilo: q.estiloNombre,
+tipo_habitacion: q.tipo,
+mano_obra: q.manoObra.toFixed(2),
+
+// Variables de desglose (cadenas de texto)
+detalle_materiales: textoMateriales, 
+detalle_productos: textoProductos  
+}).then(() => {
+// Mensaje de éxito si el envío funciona
+Swal.fire('¡Enviado!', 'La cotización fue enviada a tu correo.', 'success');
+}, (error) => {
+// Mensaje de error si hay problemas de conexión o credenciales
+Swal.fire('Error', 'No se pudo enviar el correo: ' + error.text, 'error');
+});
+
 }
 
 /* =======================
@@ -551,7 +562,6 @@ btnGuardar.addEventListener('click', guardarEnHistorial);
 btnDescargarManual.addEventListener('click', descargarManualPDF);
 btnDescargarCotizacion.addEventListener('click', descargarPDFCotizacion);
 btnEnviarCorreo.addEventListener('click', enviarCorreoEmailJS);
-btnExportarJSON && btnExportarJSON.addEventListener('click', exportarHistorialJSON);
 
 /* =======================
    12) INICIALIZACIÓN

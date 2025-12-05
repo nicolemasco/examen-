@@ -1,168 +1,159 @@
-/* =======================================================
-   EASYDECO — ESTILO UNIFICADO (PALETA SUAVE Y MODERNA)
-   Basado en tu index.css y productos.css
-   ======================================================= */
 
-:root {
-    --marron: #3a342b;
-    --marron-medio: #6d675e;
-    --crema: #e7c8aba1;
-    --crema-hover: #ffedd9c4;
-    --fondo: #fffbf4;
-}
-
-/* Fondo general suave */
-body {
-    background-color: var(--fondo);
-    font-family: "Manrope", sans-serif;
-}
-
-/* Centrado del contenedor */
 .container {
-    width: 90%;
-    max-width: 1100px;
-    margin: 120px auto 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* Título principal */
+.cuadro-blanco {
+    background-color: rgb(38, 27, 20); 
+    padding: 30px;
+    border-radius: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: #ffe0c3; 
+}
+
 .app-title {
-    font-size: 42px;
-    font-weight: 700;
+    color: #fff;
+    font-size: 45px;
     text-align: center;
-    color: var(--marron);
-    margin-bottom: 10px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    padding-top: 10px;
 }
 
 .lead {
+    color: #e7c8aba1; 
     font-size: 20px;
-    color: var(--marron-medio);
+    margin: 10px 40px 25px 40px;
     text-align: center;
-    margin-bottom: 30px;
 }
 
-/* =======================================================
-   FORMULARIOS
-   ======================================================= */
-
 .form-row {
-    margin-bottom: 22px;
+    margin-bottom: 20px;
+    text-align: left;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .form-row label {
     display: block;
-    font-size: 18px;
+    font-size: 20px; 
+    margin: 5px 0;
+    color: #ffffff; 
     font-weight: 600;
-    color: var(--marron);
-    margin-bottom: 6px;
 }
 
-/* Inputs limpios */
 .form-control {
     width: 100%;
-    padding: 12px 16px;
-    border-radius: 16px;
-    border: 1px solid #ddd;
-    color: var(--marron);
-    font-size: 16px;
-    background: #ffffff;
-}
-
-/* =======================================================
-   BOTONES — OPCIÓN A (BEIGE ELEGANTE)
-   ======================================================= */
-
-.botones,
-.tab button {
-    background-color: var(--crema);
-    color: var(--marron);
-    padding: 12px 28px;
-    border-radius: 22px;
-    border: none;
-    cursor: pointer;
-    font-size: 17px;
-    font-weight: 600;
-    transition: all 0.35s ease;
-}
-
-.botones:hover,
-.tab button:hover {
-    background-color: var(--crema-hover);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
-}
-
-/* Botón activo */
-.tab button.active {
-    background-color: var(--marron-medio);
-    color: white;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.18);
-}
-
-/* =======================================================
-   TABS / SECCIONES
-   ======================================================= */
-
-.tabcontent h3 {
-    color: var(--marron);
-    font-size: 24px;
-    margin-bottom: 16px;
-}
-
-.tabcontent {
-    padding-top: 20px;
-}
-
-/* =======================================================
-   GALERÍA DE ESTILOS (CARDS)
-   ======================================================= */
-
-.grid-estilos,
-.grid-productos {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 26px;
-    margin-top: 30px;
-}
-
-/* Card */
-.card-estilo {
-    background-color: #ffffff;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.12);
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-
-.card-estilo:hover {
-    transform: translateY(-4px);
-}
-
-/* Imagen */
-.card-estilo img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-/* Texto card */
-.card-estilo h4 {
-    text-align: center;
     font-size: 20px;
-    color: var(--marron);
-    padding: 14px 0;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 5px 0; 
+    text-align: center;
+    border: 1px solid #7a6e60; 
+    background-color: #f7f3ed;
+    color: #3a342b;
+    box-sizing: border-box; 
+}
+.form-control:focus {
+    border-color: #d86a03a1; 
+    outline: none;
 }
 
-/* Card seleccionada */
-.card-estilo.selected {
-    outline: 3px solid var(--marron-medio);
+.cuadro-blanco h3 {
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 15px;
 }
 
-/* =======================================================
-   MATERIAL / PRODUCTO — MISMO ESTILO QUE productos.css
-   ======================================================= */
 
-.card-material {
-    background: white;
+.botones-historial {
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    background: #6d675e; 
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: none;
+}
+.botones-historial:hover {
+    background: #3a342b;
+}
+
+#galeria-estilos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    padding: 20px 0;
+}
+
+#galeria-estilos .card-producto {
+    height: auto; 
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #f7f3ed; 
+    border: 3px solid transparent;
+}
+#galeria-estilos .card-producto:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+#galeria-estilos .card-producto h3 {
+    color: #3a342b;
+    font-size: 28px;
+    text-align: center;
+}
+#galeria-estilos .card-producto p {
+    font-size: 16px;
+    margin: 10px;
+    color: #6d675e;
+    text-align: center;
+}
+#galeria-estilos .select-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    background: #6d675e; 
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: none;
+    width: 80%;
+    margin-top: 10px;
+}
+#galeria-estilos .select-btn:hover {
+    background: #3a342b;
+}
+
+/* Estado de Estilo SELECCIONADO */
+.card-producto.selected {
+    border-color: #e7c8aba1; 
+    box-shadow: 0 0 15px rgba(231, 200, 171, 0.8);
+    background: #fff;
+}
+.card-producto.selected .select-btn {
+    background: #d86a03a1; 
+    color: white;
+}
+
+#lista-materiales, #lista-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    padding: 10px 0;
+}
+
+.card-producto {
+    background: #fff;
     border-radius: 20px;
     padding: 15px;
     text-align: center;
@@ -170,66 +161,157 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 320px;
+    height: auto; 
     justify-content: space-between;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+}
+.card-producto:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.card-material img {
+.card-producto img {
     width: 90%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 14px;
+    max-height: 150px; 
+    object-fit: cover; 
+    border-radius: 15px;
 }
 
-.card-material h4 {
-    font-size: 22px;
-    margin-top: 8px;
-    color: var(--marron);
+.card-producto h3 {
+    font-size: 22px; 
+    margin: 8px 0 5px;
+    color: #3a342b;
 }
 
-.card-material p {
+.card-producto p {
     font-size: 16px;
-    margin: 0;
-    color: var(--marron-medio);
+    line-height: 1.3em;
+    margin: 5px 0;
+    color: #6d675e;
+    text-align: center;
+    padding: 0 10px;
 }
 
-/* =======================================================
-   RESULTADOS
-   ======================================================= */
+.card-producto .precio {
+    font-size: 20px;
+    font-weight: bold;
+    color: #d86a03a1; 
+    margin: 10px 0;
+}
 
-.result-box {
-    background: #ffffff;
+.cantidad-input {
+    font-size: 18px;
+    border-radius: 15px;
+    width: 100px;
+    padding: 8px;
+    margin: 5px 0;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+
+/* ESTADO ACTIVO/SELECCIONADO (Materiales y Productos) */
+.card-producto.active {
+    border-color: #d86a03a1; 
+    background: #ffedd9c4; 
+}
+.card-producto.active .select-btn {
+    background: #27ae60;
+    color: white;
+}
+
+
+/* Botón Seleccionar */
+.card-producto .select-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    background: #6d675e; 
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: none;
+    width: 80%;
+    margin-top: 10px;
+}
+.card-producto .select-btn:hover {
+    background: #3a342b;
+}
+
+
+#resultado {
+    background: #3a342b; 
     padding: 25px;
     border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-    color: var(--marron);
-    margin-top: 25px;
+    border: 2px solid #e7c8aba1;
+    margin-top: 20px;
 }
-
-.result-box h4 {
-    font-size: 22px;
+#resultado h3 {
+    color: #fff;
+    font-size: 30px;
     margin-bottom: 10px;
 }
 
-#desglose p {
-    font-size: 17px;
+.result-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    color: #ffe0c3;
+    font-size: 18px;
+    border-bottom: 1px dotted #6d675e;
+}
+.result-line strong {
+    font-weight: 700;
+}
+.result-summary {
+    font-weight: 800;
+    font-size: 1.5em;
+    color: #ffedd9;
 }
 
-/* =======================================================
-   HISTORIAL
-   ======================================================= */
-
+/* Historial */
+#historial h3 {
+    color: #3a342b; 
+    font-size: 35px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+}
 .history-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.history-item {
+    background: #f7f3ed;
+    padding: 15px 20px;
+    border-radius: 15px;
+    border-left: 5px solid #d86a03a1;
+    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    margin-top: 20px;
+    font-size: 18px;
+}
+.history-item strong {
+    color: #3a342b;
+}
+.history-item small {
+    color: #6d675e;
+    font-size: 14px;
 }
 
-.history-item {
-    background: white;
-    padding: 18px;
-    border-radius: 20px;
-    box-shadow: 0px 4px 10px #00000015;
-    color: var(--marron);
+/* Efecto para validación (shake) */
+.shake {
+    animation: shake 0.6s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    border: 2px solid #ff544b !important; 
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
 }
